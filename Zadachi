@@ -1,0 +1,82 @@
+> 1) Сума всіх парних чисел у діапазоні
+> #include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Введіть два числа: ";
+    cin >> a >> b;
+
+    if (a > b) swap(a, b); // щоб a <= b
+
+    int sum = 0;
+    for (int i = a; i <= b; i++) {
+        if (i % 2 == 0)
+            sum += i;
+    }
+
+    cout << "Сума всіх парних чисел: " << sum << endl;
+    return 0;
+}
+> 2) Перевірка, чи число додатнє або від’ємне
+> #include <iostream>
+using namespace std;
+
+int main() {
+    int x;
+    cout << "Введіть число: ";
+    cin >> x;
+
+    if (x > 0)
+        cout << "Число додатнє" << endl;
+    else if (x < 0)
+        cout << "Число від’ємне" << endl;
+    else
+        cout << "Число дорівнює нулю" << endl;
+
+    return 0;
+}
+> 3) Довжина строки типу const char*
+> #include <iostream>
+#include <cstring> // для strlen
+using namespace std;
+
+int main() {
+    const char* str = "Hello, world!";
+    cout << "Довжина строки: " << strlen(str) << endl;
+    return 0;
+}
+> 
+> 4) Перетворення числа у рядок (std::string)
+> #include <iostream>
+#include <string> // для std::to_string
+using namespace std;
+
+int main() {
+    int number = 12345;
+    string s = to_string(number);
+    cout << "Число як строка: " << s << endl;
+    return 0;
+}
+> 5) “Щасливі” квитки від 000000 до 999999
+> #include <iostream>
+#include <iomanip> // для setw і setfill
+using namespace std;
+
+int main() {
+    for (int i = 0; i <= 999999; i++) {
+        int n1 = (i / 100000) % 10;
+        int n2 = (i / 10000) % 10;
+        int n3 = (i / 1000) % 10;
+        int n4 = (i / 100) % 10;
+        int n5 = (i / 10) % 10;
+        int n6 = i % 10;
+
+        if (n1 + n2 + n3 == n4 + n5 + n6) {
+            cout << setw(6) << setfill('0') << i << endl;
+        }
+    }
+
+    return 0;
+}
+> if (i < 1000) continue; // пропускати маленькі номери
